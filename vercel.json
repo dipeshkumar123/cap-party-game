@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "services": [
-    {
-      "name": "cap",
+  "services": {
+    "cap": {
       "buildCommand": "npm run build:client",
       "outputDirectory": "dist/client",
       "routes": [
@@ -13,5 +12,5 @@
         { "src": "/(.*)", "dest": "/index.html", "status": 200 }
       ]
     }
-  ]
+  }
 }
