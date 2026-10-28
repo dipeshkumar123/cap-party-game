@@ -117,7 +117,8 @@ export function useCap(): CapConnection {
   const reactionTimers = useRef<Map<string, number>>(new Map());
 
   if (!socketRef.current) {
-    socketRef.current = io({
+    const socketUrl = import.meta.env.VITE_SOCKET_URL ?? undefined;
+    socketRef.current = io(socketUrl, {
       autoConnect: false,
       transports: ["websocket", "polling"],
       reconnectionDelay: 500,

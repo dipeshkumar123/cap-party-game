@@ -10,3 +10,7 @@ services:
         value: production
       - key: PORT
         value: "3000"
+      # Set CORS_ORIGIN to your Vercel frontend URL (e.g. https://cap-xxx.vercel.app)
+      # Required when the React frontend is hosted separately from this backend.
+      - key: CORS_ORIGIN
+        value: ""

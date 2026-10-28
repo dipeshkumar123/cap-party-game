@@ -172,6 +172,14 @@ export function createCapServer(options: CreateServerOptions = {}): CapServerBun
     maxHttpBufferSize: 10_000,
     pingInterval: 10_000,
     pingTimeout: 15_000,
+    cors: {
+      origin:
+        process.env.CORS_ORIGIN ??
+        (process.env.NODE_ENV === "production"
+          ? undefined
+          : "*"),
+      credentials: !!process.env.CORS_ORIGIN,
+    },
   });
 
   const manager = new RoomManager(io, config, {
