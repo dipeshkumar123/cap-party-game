@@ -1,0 +1,53 @@
+{
+  "name": "cap-party-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CAP - a real-time bluffing-trivia party game for 2-8 players.",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c green,blue \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:client": "vite",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "start": "node dist/server/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "check": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.server.json",
+    "content:links": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/dm-mono": "^5.3.0",
+    "canvas-confetti": "^1.9.4",
+    "compression": "^1.8.1",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "helmet": "^8.1.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "socket.io": "^4.8.4",
+    "socket.io-client": "^4.8.4",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/compression": "^1.8.1",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build:client",
+  "outputDirectory": "dist/client",
+  "framework": null,
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/dist/client/assets/$1" },
+    { "src": "/favicon.svg", "dest": "/dist/client/favicon.svg" },
+    { "src": "/manifest.webmanifest", "dest": "/dist/client/manifest.webmanifest" },
+    { "src": "/og.png", "dest": "/dist/client/og.png" },
+    { "src": "/(.*)", "dest": "/dist/client/index.html", "status": 200 }
+  ]
+}

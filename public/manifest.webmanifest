@@ -1,0 +1,17 @@
+{
+  "name": "CAP - Everyone's lying. Find the truth.",
+  "short_name": "CAP",
+  "description": "A real-time bluffing-trivia party game for 2-8 players.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#10100E",
+  "theme_color": "#10100E",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

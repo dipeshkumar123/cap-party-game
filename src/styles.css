@@ -1,0 +1,11 @@
+@import "./styles/base.css";
+@import "./styles/landing.css";
+@import "./styles/setup.css";
+@import "./styles/game.css";
+@import "./styles/lobby.css";
+@import "./styles/writing.css";
+@import "./styles/voting.css";
+@import "./styles/reveal.css";
+@import "./styles/results.css";
+@import "./styles/overlays.css";
+@import "./styles/responsive.css";

@@ -1,0 +1,243 @@
+.setup-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  animation: fade-in 400ms ease both;
+}
+
+.setup-screen .site-header {
+  border-bottom: 1px solid transparent;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 8px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 550;
+  transition: color 160ms ease;
+}
+
+.back-button .icon {
+  transform: rotate(180deg);
+}
+
+.back-button:hover {
+  color: var(--acid);
+}
+
+.setup-screen .site-header > .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.setup-screen .site-header {
+  position: relative;
+}
+
+.setup-main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(390px, 1.06fr);
+  gap: clamp(38px, 6vw, 84px);
+  align-items: start;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 60px) var(--pad) 80px;
+}
+
+.setup-intro {
+  position: sticky;
+  top: 60px;
+  padding-top: 24px;
+}
+
+.setup-intro h1 {
+  margin-top: 15px;
+  font-size: clamp(2.85rem, 5vw, 4.65rem);
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.setup-intro > p:last-child {
+  max-width: 42ch;
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.setup-card {
+  display: grid;
+  gap: 21px;
+  padding: clamp(23px, 4vw, 35px);
+  border: 2px solid var(--ink);
+  border-radius: 28px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 10px 10px 0 var(--acid);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  position: relative;
+}
+
+.field label,
+.field legend {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.avatar-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 15px;
+  border: 2px solid var(--ink);
+  border-radius: 13px;
+  background: #fbf8ee;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.input::placeholder {
+  color: #9a9486;
+  font-weight: 400;
+}
+
+.input:focus {
+  border-color: var(--signal);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(91 91 255 / 17%);
+}
+
+.input[aria-invalid="true"] {
+  border-color: #a3321d;
+}
+
+.input-code {
+  min-height: 66px;
+  padding: 0 13px;
+  font-family: var(--font-mono);
+  font-size: 1.85rem;
+  letter-spacing: 0.28em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.field-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+}
+
+.form-error,
+.setup-card .field-hint {
+  color: var(--muted-dark);
+}
+
+.setup-card .form-error {
+  border-color: #d05636;
+  background: #ffe5dc;
+  color: #8c2a18;
+}
+
+.setup-card .form-error > span {
+  background: #b64126;
+  color: #fff8f2;
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.avatar-choice {
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease,
+    transform 150ms ease;
+}
+
+.avatar-choice:hover {
+  transform: translateY(-2px);
+}
+
+.avatar-choice .avatar {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.avatar-choice.is-selected {
+  border-color: var(--ink);
+  background: var(--acid);
+}
+
+.avatar-choice-check {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--acid);
+  opacity: 0;
+  transform: scale(0.45);
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.avatar-choice.is-selected .avatar-choice-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.setup-fineprint {
+  color: var(--muted-dark);
+  font-size: 0.65rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.setup-card .btn:disabled {
+  opacity: 0.55;
+}
