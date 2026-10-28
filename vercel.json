@@ -2,6 +2,7 @@
   "version": 2,
   "services": {
     "cap": {
+      "root": ".",
       "buildCommand": "npm run build:client",
       "outputDirectory": "dist/client",
       "routes": [
