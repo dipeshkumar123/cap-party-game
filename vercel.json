@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "services": {
-    "cap": {
-      "root": ".",
-      "buildCommand": "npm run build:client",
-      "outputDirectory": "dist/client",
-      "routes": [
-        { "src": "/assets/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
-        { "src": "/favicon.svg" },
-        { "src": "/manifest.webmanifest" },
-        { "src": "/og.png" },
-        { "src": "/(.*)", "dest": "/index.html", "status": 200 }
-      ]
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/client" }
     }
-  }
+  ],
+  "routes": [
+    { "src": "/assets/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
+    { "src": "/favicon.svg" },
+    { "src": "/manifest.webmanifest" },
+    { "src": "/og.png" },
+    { "src": "/(.*)", "dest": "/index.html", "status": 200 }
+  ]
 }
